@@ -10,8 +10,8 @@ on:
       - main
 
 jobs:
-  lint-typecheck-test:
-    name: Lint, Typecheck & Test
+  lint-typecheck:
+    name: Lint & Typecheck
     runs-on: ubuntu-latest
 
     steps:
