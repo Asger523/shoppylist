@@ -11,6 +11,19 @@ import ShoppingListScreen from './app/screens/shopping-list/shopping-list.screen
 
 const Tab = createBottomTabNavigator();
 
+// Tab bar icon components
+const HomeIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="home" size={size} color={color} />
+);
+
+const StoresIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="storefront" size={size} color={color} />
+);
+
+const ShoppingListIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="cart" size={size} color={color} />
+);
+
 const App = () => {
   return (
     <SafeAreaProvider>
@@ -33,27 +46,21 @@ const App = () => {
             name="Home"
             component={HomeScreen}
             options={{
-              tabBarIcon: ({ color, size }) => (
-                <Icon name="home" size={size} color={color} />
-              ),
+              tabBarIcon: HomeIcon,
             }}
           />
           <Tab.Screen
             name="Stores"
             component={StoresScreen}
             options={{
-              tabBarIcon: ({ color, size }) => (
-                <Icon name="storefront" size={size} color={color} />
-              ),
+              tabBarIcon: StoresIcon,
             }}
           />
           <Tab.Screen
             name="Shopping List"
             component={ShoppingListScreen}
             options={{
-              tabBarIcon: ({ color, size }) => (
-                <Icon name="cart" size={size} color={color} />
-              ),
+              tabBarIcon: ShoppingListIcon,
             }}
           />
         </Tab.Navigator>
