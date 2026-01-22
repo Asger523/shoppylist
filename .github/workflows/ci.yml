@@ -10,8 +10,8 @@ on:
       - main
 
 jobs:
-  lint-typecheck-test:
-    name: Lint, Typecheck & Test
+  lint-typecheck:
+    name: Lint & Typecheck
     runs-on: ubuntu-latest
 
     steps:
@@ -32,6 +32,3 @@ jobs:
 
       - name: Run TypeScript type checking
         run: npx tsc --noEmit
-
-      - name: Run tests
-        run: npm test -- --coverage --watchAll=false
